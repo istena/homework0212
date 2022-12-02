@@ -9,13 +9,10 @@ for(int i=0;i<a;i++){
 Console.Write("Введите сдвиг: ");
 int s=Convert.ToInt32(Console.ReadLine());
 int []newarray=new int [a];
-int q=0;
 for(int i=0;i<a;i++){
-    q=i+s+1;
-    if(q>=a) {
-        q=q%a; 
-    }
-    newarray[i]=array[q];
+    if (i<s) newarray[i]=array[i+a-s];
+    else newarray[i]=array[i-s];
 }
 Console.WriteLine($"[{string.Join(", ", array)}]");
 Console.WriteLine($"[{string.Join(", ", newarray)}]");
+
