@@ -1,4 +1,4 @@
-﻿//taskmasiv
+﻿//Массивы
 Console.Clear();
 void InputArray(int[] array)
 {

@@ -1,19 +1,23 @@
-﻿//task dop2
+﻿//Гипотеза Гольдбаха
 Console.Clear();
-Console.Write("Введите количество чисел: ");
+int Prosto(int numbers){
+    for (int i=2;i<numbers/2;i++){
+        if (numbers%i==0) return 0;       
+    }
+    return 1;
+}
+int Task(int res){
+    for (int i=2;i<res/2;i++){
+        if (Prosto(i)==1){
+        if (Prosto(res-i)==1) return i;
+        }
+    }
+    return 0;
+}
+Console.Write("Введите  чисело: ");
 int a= Convert.ToInt32(Console.ReadLine());
-int []array=new int [a];
-Console.Write("Введите чисела: ");
-for(int i=0;i<a;i++){
-    array[i]=Convert.ToInt32(Console.ReadLine());
+int res=Task(a);
+if (res!=0){
+    Console.Write($"{res}+{a-res}={a}");
 }
-Console.Write("Введите сдвиг: ");
-int s=Convert.ToInt32(Console.ReadLine());
-int []newarray=new int [a];
-for(int i=0;i<a;i++){
-    if (i<s) newarray[i]=array[i+a-s];
-    else newarray[i]=array[i-s];
-}
-Console.WriteLine($"[{string.Join(", ", array)}]");
-Console.WriteLine($"[{string.Join(", ", newarray)}]");
 
