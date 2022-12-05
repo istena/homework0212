@@ -1,4 +1,5 @@
-﻿Console.Clear();
+﻿//task dop2
+Console.Clear();
 Console.Write("Введите количество чисел: ");
 int a= Convert.ToInt32(Console.ReadLine());
 int []array=new int [a];
